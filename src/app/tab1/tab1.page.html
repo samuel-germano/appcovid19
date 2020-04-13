@@ -35,11 +35,11 @@
     </div>
     <div>
       <ion-searchbar [(ngModel)]="searchCountry" autocomplete="off" animated style="width: 257px; margin: 0 auto;"
-        placeholder="País">
+        placeholder="Estados">
       </ion-searchbar>
       <!-- <ion-searchbar style="width: 257px; margin: 0 auto; " color="primary"></ion-searchbar> -->
-      <p style="text-align: center;">Casos no Mundo</p>
-      <!-- <h5 style="font-weight: bold; text-align: center;">18:00 07/04/2020</h5> -->
+      <p style="text-align: center;">Ultima Atualização</p>
+      <h5 style="font-weight: bold; text-align: center;">{{lastupdate}}</h5>
 
       <ion-card style="border-left: 6px solid #7F0EB5; " color="secondary">
         <ion-card-content style="height: 87px;">
@@ -61,36 +61,34 @@
         </ion-card-content>
       </ion-card>
 
-      <ion-card style="border-left: 6px solid #0EB579; " color="secondary">
-        <ion-card-content style="height: 87px;">
-          <h1>{{recovered}}</h1>
-          <small>
-            Recuperados
-          </small>
-        </ion-card-content>
-      </ion-card>
+
 
       <ion-row>
         <ion-col size="6">
-          <h2 class="ion-padding" style="text-align: left;font-weight: bold; color: black;">Paises</h2>
+          <h2 class="ion-padding" style="text-align: left;font-weight: bold; color: black;">Estados</h2>
         </ion-col>
         <ion-col size="6">
-          <h4 class="ion-padding" style="text-align: right; color: black;">View All</h4>
+          <h4 class="ion-padding" style="text-align: right; color: black;">Ver Todos</h4>
         </ion-col>
       </ion-row>
 
       <ion-slides [options]="slideOpts">
 
         <ion-slide *ngFor="let country of countries | filter:searchCountry" style="width: 300px;">
-          <ion-card color="primary">
+          <ion-card style="width: 800px; background: linear-gradient(148.9deg, #C984FF -4.32%, #1BA6C5 152.1%);">
             <ion-card-header>
-              <ion-card-title>{{country.country}}</ion-card-title>
-            </ion-card-header>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-            <ion-card-content>
 
-            </ion-card-content>
+              <ion-card-title style="color: white; font-family: Montserrat;
+              font-style: normal;
+              font-weight: bold;">{{country.state}}</ion-card-title>
+              <h5 style=" color: white; font-family: Montserrat;
+              font-style: normal;
+              font-weight: normal; text-align: center;">Infectados: {{country.count}}</h5>
+
+            </ion-card-header>
+
+            <img src="../../assets/img/linhafinal.svg" alt="" style="width: 850px; ">
+
           </ion-card>
         </ion-slide>
 

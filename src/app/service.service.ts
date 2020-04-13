@@ -6,6 +6,7 @@ import { Injectable } from "@angular/core";
 })
 export class ServiceService {
   apiUrl: any = "https://coronavirus-19-api.herokuapp.com/";
+  api2Url: any = "https://api.apify.com/v2/key-value-stores/";
 
   constructor(public http: HttpClient) {}
 
@@ -15,5 +16,17 @@ export class ServiceService {
 
   getCountry() {
     return this.http.get(`${this.apiUrl}countries`);
+  }
+
+  getBrazil() {
+    return this.http.get(
+      `${this.api2Url}tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true`
+    );
+  }
+
+  getEstados() {
+    return this.http.get(
+      `${this.api2Url}TyToNta7jGKkpszMZ/records/LATEST?disableRedirect=true`
+    );
   }
 }
